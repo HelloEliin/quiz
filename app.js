@@ -31,15 +31,6 @@ import '../css/app.css'
  let score = 0;
  let questionCounter = 0;
  const MAX_QUESTIONS = 35;
- let availibleQuestions = [{
-
- }]
-
-
-
-
-let getQuestion;
-
 
 
 
@@ -52,6 +43,7 @@ function startGame(){
     console.log('started');
     document.getElementById('startView').style.display='none';
     document.getElementById('questionView').style.display="block";
+    console.log(questions)
     
 
 }
@@ -86,8 +78,13 @@ function ifRightAnswer(){
 
 
 
-    var mydata = JSON.parse(questions);
-    console.log(mydata);
+ fetch('http://localhost:3000/storage/questions.json')
+ .then((response) => response.json())
+.then((data) => console.log(data));
+
+
+
+
 
 
 
