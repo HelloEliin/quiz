@@ -39,7 +39,7 @@ startButton.addEventListener('click', startGame)
 
 function startGame() {
 
-    $(function () {
+       $(function () {
         $.getJSON("/questions", function (data) {
             let currentQuestion = 0;
     
@@ -50,27 +50,12 @@ function startGame() {
             console.log(yes);
             console.log(category);
             console.log(allQuestions);
-            console.log(Object.entries(allQuestions[0, 1]));
+            let hey = Object.entries(allQuestions[0, 1]);
 
-            console.log(allQuestions.category)
             
+            question.innerText = hey[1];
 
-    
-
-            var elements = Object.keys(allQuestions).map(function(k) {
-                return allQuestions[k];
-            })
-            console.log(elements[0]);
-
-            function showQuestion(questions){
-                questions.innerText = allQuestions;
-            }
-
-            showQuestion(allQuestions[currentQuestion])
-
-            console.log(showQuestion(allQuestions[currentQuestion]));
-
-
+   
            
             
             
