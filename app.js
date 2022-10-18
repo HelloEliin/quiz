@@ -37,14 +37,52 @@ import '../css/app.css'
 
 startButton.addEventListener('click', startGame)
 
-function startGame(){
-    questionCounter = 0;
-    score = 0;
-    console.log('started');
-    document.getElementById('startView').style.display='none';
-    document.getElementById('questionView').style.display="block";
-    console.log(questions)
+function startGame() {
+
+    $(function () {
+        $.getJSON("/questions", function (data) {
+            let currentQuestion = 0;
     
+            const allQuestions = Object.values(data);
+            const category = Object.keys(data[0]);
+
+            const yes = Object.keys(allQuestions[0, 1]);
+            console.log(yes);
+            console.log(category);
+            console.log(allQuestions);
+            console.log(Object.entries(allQuestions[0, 1]));
+
+            console.log(allQuestions.category)
+            
+
+    
+
+            var elements = Object.keys(allQuestions).map(function(k) {
+                return allQuestions[k];
+            })
+            console.log(elements[0]);
+
+            function showQuestion(questions){
+                questions.innerText = allQuestions;
+            }
+
+            showQuestion(allQuestions[currentQuestion])
+
+            console.log(showQuestion(allQuestions[currentQuestion]));
+
+
+           
+            
+            
+        })
+    });
+
+
+    document.getElementById('startView').style.display = 'none';
+    document.getElementById('questionView').style.display = "block";
+    document.getElementById('scoreView').style.display = "none";
+
+
 
 }
 
