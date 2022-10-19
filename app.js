@@ -27,6 +27,11 @@ const scoreView = document.getElementById('scoreView').style.display = "none";
 const totalScore = document.getElementById('score')
 const counter = document.getElementById('counter')
 const counter2 = document.getElementById('counter2')
+const progressBar = document.getElementById('progressBar')
+const categories = document.getElementById('category')
+
+
+
 
 
 
@@ -43,6 +48,13 @@ let allQuestions;
 let category;
 
 
+let widthProgressBar = ['0%'];
+
+
+var progressWidth = 0;
+$('#progressBar').width(progressWidth + '%');
+
+
 
 
 
@@ -50,19 +62,27 @@ startButton.addEventListener('click', startGame)
 
 function startGame() {
    axios.get('/questions').then(response => {
-         allQuestions = response.data  //Hämtar in arrayen från web.php filen 
-         currentQuestion = 0  //Nollställs varje gång du startar spelet igen, det är bra om man ska köra flera varv utan att ladda om sidan
-         score = 0   //Samma som raden över fast för score
-         questionCounter = 1  //Samma som raden över fast för räkneverket
+         allQuestions = response.data  
+         currentQuestion = 0  
+         score = 0   
+         questionCounter = 1  
+         var progressWidth = 0;
+         
+         
 
-         question.innerText = allQuestions[0]['question']   //hämtar ut frågan för fråga 1
-         rightAnswer.innerText = allQuestions[0]['answer']   //hämtar ut svaret för fråga 1
+         categories.innerText = allQuestions[0]['category']  // Uppdateras
+         question.innerText = allQuestions[0]['question']   
+         rightAnswer.innerText = allQuestions[0]['answer']   
+         
 
 
+
+         $('#progressBar').width(progressWidth + '%');
 
          counter2.innerText = "Fråga " + questionCounter + " av 35";
          document.getElementById('questionView').style.display = "block";
          document.getElementById('startView').style.display = "none";
+
 
 
    
@@ -74,6 +94,8 @@ function startGame() {
 
      function nextQuestion(){
 
+        
+        $('#progressBar').width(progressWidth + '%');
 
         
 
@@ -92,8 +114,9 @@ function startGame() {
             document.getElementById('questionView').style.display = "block";
             document.getElementById('startView').style.display = "none";   //hämtar ut svaret för fråga 1
             document.getElementById('scoreView').style.display = "none";
+           
 
-            
+            progressWidth+=2.8;
             counter.innerText = "Fråga " + questionCounter + " av 35";
             counter2.innerText = "Fråga " + questionCounter + " av 35";
 
@@ -132,9 +155,15 @@ function ifRightAnswer() {
     document.getElementById('questionView').style.display = "block";
     document.getElementById('whiteDonkey').style.display = "block";
 
+    
+
+ 
+    widthProgressBar += 20;
     questionCounter++
     currentQuestion++
     score++
+
+    $("#progressBar").width(widthProgressBar);
 
     nextQuestion();
 
