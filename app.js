@@ -28,6 +28,7 @@ const totalScore = document.getElementById('score')
 const counter = document.getElementById('counter')
 const counter2 = document.getElementById('counter2')
 const progressBar = document.getElementById('progressBar')
+const progressBar2 = document.getElementById('progressBar2')
 const categories = document.getElementById('category')
 
 
@@ -49,11 +50,13 @@ let category;
 
 
 let widthProgressBar = ['0%'];
-
-
 var progressWidth = 0;
 $('#progressBar').width(progressWidth + '%');
 
+
+let widthProgressBar2 = ['0%'];
+var progressWidth2 = 0;
+$('#progressBar2').width(progressWidth2 + '%');
 
 
 
@@ -117,6 +120,7 @@ function startGame() {
            
 
             progressWidth+=2.8;
+            progressWidth2+=2.8;
             counter.innerText = "Fråga " + questionCounter + " av 35";
             counter2.innerText = "Fråga " + questionCounter + " av 35";
 
@@ -135,7 +139,7 @@ function showAnswer() {
     document.getElementById('vector').style.display = 'none';
     document.getElementById('answerView').style.display = "block";
 
-    
+    $('#progressBar2').width(progressWidth2 + '%');
 
 
 
