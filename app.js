@@ -33,30 +33,14 @@ const categories = document.getElementById('category')
 
 
 
-
-
-
-
-
-
 let currentQuestion = 0;
 let score = 0;
 let questionCounter = 0;
-
-
-
 let allQuestions;
 let category;
+let progressWidth = 0;
+let progressWidth2 = 0;
 
-
-let widthProgressBar = ['0%'];
-var progressWidth = 0;
-$('#progressBar').width(progressWidth + '%');
-
-
-let widthProgressBar2 = ['0%'];
-var progressWidth2 = 0;
-$('#progressBar2').width(progressWidth2 + '%');
 
 
 
@@ -69,18 +53,15 @@ function startGame() {
          currentQuestion = 0  
          score = 0   
          questionCounter = 1  
-         var progressWidth = 0;
+         progressWidth = 0;
+         progressWidth2 = 0;
+     
+         question.innerText = allQuestions[currentQuestion]['question'] 
+         categories.innerText = allQuestions[currentQuestion]['category']  
+         rightAnswer.innerText = allQuestions[currentQuestion]['answer']   
          
-         
-
-         categories.innerText = allQuestions[0]['category']  // Uppdateras
-         question.innerText = allQuestions[0]['question']   
-         rightAnswer.innerText = allQuestions[0]['answer']   
-         
-
-
-
          $('#progressBar').width(progressWidth + '%');
+         $('#progressBar2').width(progressWidth2 + '%');
 
          counter2.innerText = "Fråga " + questionCounter + " av 35";
          document.getElementById('questionView').style.display = "block";
@@ -88,19 +69,14 @@ function startGame() {
 
 
 
-   
-
          nextQuestion();
    
      })};
  
 
      function nextQuestion(){
-
-        
+         
         $('#progressBar').width(progressWidth + '%');
-
-        
 
         if(currentQuestion >= 6){
 
@@ -118,9 +94,7 @@ function startGame() {
             document.getElementById('startView').style.display = "none";   //hämtar ut svaret för fråga 1
             document.getElementById('scoreView').style.display = "none";
            
-
-            progressWidth+=2.8;
-            progressWidth2+=2.8;
+            
             counter.innerText = "Fråga " + questionCounter + " av 35";
             counter2.innerText = "Fråga " + questionCounter + " av 35";
 
@@ -133,15 +107,17 @@ function startGame() {
 getAnswerBtn.addEventListener('click', showAnswer)
 
 function showAnswer() {
+
+    $('#progressBar2').width(progressWidth2 + '%');
+
     document.body.style.backgroundColor = "#7678ED";
     document.getElementById('questionView').style.display = "none";
     document.getElementById('whiteDonkey').style.display = 'none';
     document.getElementById('vector').style.display = 'none';
     document.getElementById('answerView').style.display = "block";
 
-    $('#progressBar2').width(progressWidth2 + '%');
-
-
+    progressWidth+=2.8;
+    progressWidth2+=2.8;
 
 }
 
@@ -159,15 +135,13 @@ function ifRightAnswer() {
     document.getElementById('questionView').style.display = "block";
     document.getElementById('whiteDonkey').style.display = "block";
 
-    
-
- 
-    widthProgressBar += 20;
+  
     questionCounter++
     currentQuestion++
     score++
 
-    $("#progressBar").width(widthProgressBar);
+    $("#progressBar").width(progressWidth);
+    $("#progressBar2").width(progressWidth2);
 
     nextQuestion();
 
@@ -181,8 +155,6 @@ noBtn.addEventListener('click', ifWrongAnswer)
 
 function ifWrongAnswer() {
 
-    currentQuestion++
-
     document.body.style.backgroundColor = "#ffffff";
     document.getElementById('answerView').style.display = "none";
     document.getElementById('scoreView').style.display = "none";
@@ -190,10 +162,15 @@ function ifWrongAnswer() {
     document.getElementById('questionView').style.display = "none";
     document.getElementById('whiteDonkey').style.display = "block";
 
+
+    questionCounter++
+    currentQuestion++
+    score++
+
+    $("#progressBar").width(widthProgressBar);
+    $("#progressBar2").width(widthProgressBar);
+
     nextQuestion();
-
-
-
 
 
 }
@@ -204,7 +181,6 @@ oneMoreTimeBtn.addEventListener('click', oneMoreRound)
 
 
 function oneMoreRound() {
-
 
     questionCounter = 0;
     score = 0;
