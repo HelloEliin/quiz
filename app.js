@@ -23,8 +23,14 @@ const startView = document.getElementById('startView')
 const questionView = document.getElementById('questionView').style.display = "none";
 const answerView = document.getElementById('answerView').style.display = "none";
 const vector = document.getElementById('whiteDonkey').style.display = "block";
-
 const scoreView = document.getElementById('scoreView').style.display = "none";
+const totalScore = document.getElementById('score')
+const counter = document.getElementById('counter')
+const counter2 = document.getElementById('counter2')
+
+
+
+
 
 
 let currentQuestion = 0;
@@ -38,40 +44,62 @@ let category;
 
 
 
+
+
 startButton.addEventListener('click', startGame)
 
-
 function startGame() {
+   axios.get('/questions').then(response => {
+         allQuestions = response.data  //Hämtar in arrayen från web.php filen 
+         currentQuestion = 0  //Nollställs varje gång du startar spelet igen, det är bra om man ska köra flera varv utan att ladda om sidan
+         score = 0   //Samma som raden över fast för score
+         questionCounter = 1  //Samma som raden över fast för räkneverket
 
-    $(function () {
-     $.getJSON("/questions", function (data) {
-         let currentQuestion = 0;
+         question.innerText = allQuestions[0]['question']   //hämtar ut frågan för fråga 1
+         rightAnswer.innerText = allQuestions[0]['answer']   //hämtar ut svaret för fråga 1
+
+
+
+         counter2.innerText = "Fråga " + questionCounter + " av 35";
+         document.getElementById('questionView').style.display = "block";
+         document.getElementById('startView').style.display = "none";
+
+
+   
+
+         nextQuestion();
+   
+     })};
  
-        allQuestions = Object.values(data);
-        category = Object.keys(data[0]);
 
-         const yes = Object.keys(allQuestions[0, 1]);
-         console.log(yes);
-         console.log(category);
-         console.log(allQuestions);
-         let hey = Object.entries(allQuestions[0, 1]);
-
-         
-         question.innerText = hey[1];
- 
-         
-     })
- });
+     function nextQuestion(){
 
 
- document.getElementById('startView').style.display = 'none';
- document.getElementById('questionView').style.display = "block";
- document.getElementById('scoreView').style.display = "none";
+        
 
+        if(currentQuestion >= 6){
 
+            document.getElementById('scoreView').style.display = "block";
+            document.getElementById('questionView').style.display = "none";
+            document.getElementById('startView').style.display = "none";
+            document.getElementById('score').style.display = "block";
+            totalScore.innerText = score + " av 35 rätt";
+   
+           }else{
 
-}
+            question.innerText = allQuestions[currentQuestion]['question']   //hämtar ut frågan för fråga 1
+            rightAnswer.innerText = allQuestions[currentQuestion]['answer']
+            document.getElementById('questionView').style.display = "block";
+            document.getElementById('startView').style.display = "none";   //hämtar ut svaret för fråga 1
+            document.getElementById('scoreView').style.display = "none";
 
+            
+            counter.innerText = "Fråga " + questionCounter + " av 35";
+            counter2.innerText = "Fråga " + questionCounter + " av 35";
+
+           }
+
+     }
 
 
 
@@ -99,19 +127,16 @@ function ifRightAnswer() {
 
     document.body.style.backgroundColor = "#ffffff";
     document.getElementById('answerView').style.display = "none";
-    document.getElementById('scoreView').style.display = "block";
+    document.getElementById('scoreView').style.display = "none";
     document.getElementById('vector').style.display = "block";
-    document.getElementById('questionView').style.display = "none";
+    document.getElementById('questionView').style.display = "block";
     document.getElementById('whiteDonkey').style.display = "block";
 
-
-
-        SetNewQuestion();
-
-
-
+    questionCounter++
+    currentQuestion++
     score++
 
+    nextQuestion();
 
 }
 
@@ -123,12 +148,16 @@ noBtn.addEventListener('click', ifWrongAnswer)
 
 function ifWrongAnswer() {
 
+    currentQuestion++
+
     document.body.style.backgroundColor = "#ffffff";
     document.getElementById('answerView').style.display = "none";
-    document.getElementById('scoreView').style.display = "block";
+    document.getElementById('scoreView').style.display = "none";
     document.getElementById('vector').style.display = "block";
     document.getElementById('questionView').style.display = "none";
     document.getElementById('whiteDonkey').style.display = "block";
+
+    nextQuestion();
 
 
 
