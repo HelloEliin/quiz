@@ -33,7 +33,7 @@ const categories = document.getElementById('category')
 
 
 
-let currentQuestion = 0;
+
 let score = 0;
 let questionCounter = 0;
 let allQuestions;
@@ -144,7 +144,6 @@ function ifRightAnswer() {
 
   
     questionCounter++
-    currentQuestion++
     score++
 
     $("#progressBar").width(progressWidth);
