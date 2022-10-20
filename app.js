@@ -172,10 +172,10 @@ function ifWrongAnswer() {
 
     questionCounter++
     currentQuestion++
-    score++
 
-    $("#progressBar").width(widthProgressBar);
-    $("#progressBar2").width(widthProgressBar);
+
+    $("#progressBar").width(progressWidth);
+    $("#progressBar2").width(progressWidth2);
 
     nextQuestion();
 
@@ -194,7 +194,7 @@ function oneMoreRound() {
 
     document.getElementById('startView').style.display = "block";
     document.getElementById('answerView').style.display = "none";
-    document.getElementById('scoreView').style.display = "block";
+    document.getElementById('scoreView').style.display = "none";
     document.getElementById('vector').style.display = "block";
     document.getElementById('questionView').style.display = "none";
     document.getElementById('whiteDonkey').style.display = "block";
