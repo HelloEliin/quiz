@@ -48,17 +48,20 @@ let progressWidth2 = 0;
 startButton.addEventListener('click', startGame)
 
 function startGame() {
-   axios.get('/questions').then(response => {
-         allQuestions = response.data  
-         currentQuestion = 0  
+    
+   let qArray = axios.get('/questions').then(response => {
+        const data = response.data;
+        allQuestions = response.data;   // Här? Vill hämta in en array of object
+
+
          score = 0   
-         questionCounter = 1  
+         questionCounter = 0; 
          progressWidth = 0;
          progressWidth2 = 0;
      
-         question.innerText = allQuestions[currentQuestion]['question'] 
-         categories.innerText = allQuestions[currentQuestion]['category']  
-         rightAnswer.innerText = allQuestions[currentQuestion]['answer']   
+         question.innerText = allQuestions[questionCounter]['question'] 
+         categories.innerText = allQuestions[questionCounter]['category']  
+         rightAnswer.innerText = allQuestions[questionCounter]['answer']   
          
          $('#progressBar').width(progressWidth + '%');
          $('#progressBar2').width(progressWidth2 + '%');
@@ -68,6 +71,7 @@ function startGame() {
          document.getElementById('startView').style.display = "none";
 
 
+         questionCounter++
 
          nextQuestion();
    
@@ -75,6 +79,8 @@ function startGame() {
  
 
      function nextQuestion(){
+
+
          
         $('#progressBar').width(progressWidth + '%');
 
@@ -88,8 +94,9 @@ function startGame() {
    
            }else{
 
-            question.innerText = allQuestions[currentQuestion]['question']   //hämtar ut frågan för fråga 1
-            rightAnswer.innerText = allQuestions[currentQuestion]['answer']
+            question.innerText = allQuestions[questionCounter]['question'] 
+            categories.innerText = allQuestions[questionCounter]['category']  
+            rightAnswer.innerText = allQuestions[questionCounter]['answer']  
             document.getElementById('questionView').style.display = "block";
             document.getElementById('startView').style.display = "none";   //hämtar ut svaret för fråga 1
             document.getElementById('scoreView').style.display = "none";
