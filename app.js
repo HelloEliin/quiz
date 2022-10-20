@@ -171,7 +171,6 @@ function ifWrongAnswer() {
 
 
     questionCounter++
-    currentQuestion++
 
 
     $("#progressBar").width(progressWidth);
