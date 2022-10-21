@@ -41,7 +41,7 @@
 
 
 
-        <div class="answerView h-full" id="answerView">
+        <div class="answerView h-full hidden" id="answerView">
             <div class="absolute flex items-right flex-col text-center font-semibold pl-12 pt-10 text-white text-10 2xl:text-24 xl:text-20">
                 <img class="w-16 2xl:w-auto xl:w-auto md:w-20 " src="/images/Logo-3.svg">
                 <div>donkeyquiz</div>
@@ -94,7 +94,7 @@
 
 
 
-        <div class="questionView h-full" id="questionView">
+        <div class="questionView h-full hidden" id="questionView">
 
             <div class="flex items-center flex-col text-center justify-center h-full">
                 <p class="text-14 pt-20 pb-5 text-lightBlue 2xl:pb-0 xl:text-16" id="category">
@@ -160,7 +160,7 @@
 
 
 
-        <div id="scoreView" class="h-full">
+        <div id="scoreView" class="h-full hidden">
 
             <div class="flex items-center flex-col text-center justify-center h-full 2xl:-m-16 xl:-m-6 ">
 
@@ -183,32 +183,33 @@
         md:flex-col-reverse md:items-center md:justify-center">
 
                         <p class="mt-4">Film och tv</p>
-                        <div class="flex space-x-2 2xl:flex-col 2xl:space-x-0 xl:flex-col xl:space-x-0
-                    md:flex-col md:space-x-0">
-                            <div class="button"></div>
-                            <div class="button"></div>
-                            <div class="button"></div>
-                            <div class="button"></div>
-                            <div class="button"></div>
-                            <div class="button"></div>
+                        <div class="movies flex space-x-2 2xl:flex-col-reverse 2xl:space-x-0 xl:flex-col-reverse xl:space-x-0
+                    md:flex-col-reverse md:space-x-0" id="movies">
+                            <div class="button bg-lightGrey"></div>
+                            <div class="button bg-lightGrey"></div>
+                            <div class="button bg-lightGrey"></div>
+                            <div class="button bg-lightGrey"></div>
+                            <div class="button bg-lightGrey"></div>
+                            <div class="button bg-lightGrey"></div>
                         </div>
                     </div>
 
 
 
 
-                    <div class="pointBox flex flex-col 2xl:flex-col-reverse 2xl:items-center
+                    <div class="pointBox flex flex-col
+                    2xl:flex-col-reverse 2xl:items-center
         xl:flex-col-reverse xl:items-center xl:justify-center
         md:flex-col-reverse md:items-center md:justify-center">
-                        <p class="mt-4">Geografri</p>
-                        <div class="flex space-x-2 2xl:flex-col 2xl:space-x-0 xl:flex-col xl:space-x-0
-                md:flex-col md:space-x-0">
-                            <div class="button"></div>
-                            <div class="button"></div>
-                            <div class="button"></div>
-                            <div class="button"></div>
-                            <div class="button"></div>
-                            <div class="button"></div>
+                        <p class="mt-4">Geografi</p>
+                        <div class="geograph flex space-x-2 2xl:flex-col-reverse 2xl:space-x-0 xl:flex-col-reverse xl:space-x-0
+                    md:flex-col-reverse md:space-x-0" id="geograph">
+                            <div class="button bg-lightGrey"></div>
+                            <div class="button bg-lightGrey"></div>
+                            <div class="button bg-lightGrey"></div>
+                            <div class="button bg-lightGrey"></div>
+                            <div class="button bg-lightGrey"></div>
+                            <div class="button bg-lightGrey"></div>
                         </div>
                     </div>
 
@@ -218,14 +219,14 @@
         xl:flex-col-reverse xl:items-center xl:justify-center
         md:flex-col-reverse md:items-center md:justify-center">
                         <p class="mt-4">Historia</p>
-                        <div class="flex space-x-2 2xl:flex-col 2xl:space-x-0 xl:flex-col xl:space-x-0
-                md:flex-col md:space-x-0">
-                            <div class="button"></div>
-                            <div class="button"></div>
-                            <div class="button"></div>
-                            <div class="button"></div>
-                            <div class="button"></div>
-                            <div class="button"></div>
+                        <div class="history flex space-x-2 2xl:flex-col-reverse 2xl:space-x-0 xl:flex-col-reverse xl:space-x-0
+                    md:flex-col-reverse md:space-x-0" id="history">
+                            <div class="button bg-lightGrey"></div>
+                            <div class="button bg-lightGrey"></div>
+                            <div class="button bg-lightGrey"></div>
+                            <div class="button bg-lightGrey"></div>
+                            <div class="button bg-lightGrey"></div>
+                            <div class="button bg-lightGrey"></div>
                         </div>
                     </div>
 
@@ -237,14 +238,14 @@
         xl:flex-col-reverse xl:items-center xl:justify-center
         md:flex-col-reverse md:items-center md:justify-center">
                         <p class="mt-4">Musik</p>
-                        <div class="flex space-x-2 2xl:flex-col 2xl:space-x-0 xl:flex-col xl:space-x-0
-                md:flex-col md:space-x-0">
-                            <div class="button"></div>
-                            <div class="button"></div>
-                            <div class="button"></div>
-                            <div class="button"></div>
-                            <div class="button"></div>
-                            <div class="button"></div>
+                        <div class="music flex space-x-2 2xl:flex-col-reverse 2xl:space-x-0 xl:flex-col-reverse xl:space-x-0
+                    md:flex-col-reverse md:space-x-0" id="music">
+                            <div class="button bg-lightGrey"></div>
+                            <div class="button bg-lightGrey"></div>
+                            <div class="button bg-lightGrey"></div>
+                            <div class="button bg-lightGrey"></div>
+                            <div class="button bg-lightGrey"></div>
+                            <div class="button bg-lightGrey"></div>
                         </div>
                     </div>
 
@@ -254,14 +255,14 @@
         xl:flex-col-reverse xl:items-center xl:justify-center
         md:flex-col-reverse md:items-center md:justify-center">
                         <p class="mt-4">Övrigt</p>
-                        <div class="flex space-x-2 2xl:flex-col 2xl:space-x-0 xl:flex-col xl:space-x-0
-                md:flex-col md:space-x-0">
-                            <div class="button"></div>
-                            <div class="button"></div>
-                            <div class="button"></div>
-                            <div class="button"></div>
-                            <div class="button"></div>
-                            <div class="button"></div>
+                        <div class="other flex space-x-2 2xl:flex-col-reverse 2xl:space-x-0 xl:flex-col-reverse xl:space-x-0
+                    md:flex-col-reverse md:space-x-0" id="other">
+                            <div class="button bg-lightGrey"></div>
+                            <div class="button bg-lightGrey"></div>
+                            <div class="button bg-lightGrey"></div>
+                            <div class="button bg-lightGrey"></div>
+                            <div class="button bg-lightGrey"></div>
+                            <div class="button bg-lightGrey"></div>
                         </div>
                     </div>
 
@@ -270,14 +271,14 @@
         xl:flex-col-reverse xl:items-center xl:justify-center
         md:flex-col-reverse md:items-center md:justify-center">
                         <p class="mt-4">Vetenskap</p>
-                        <div class="flex space-x-2 2xl:flex-col 2xl:space-x-0 xl:flex-col xl:space-x-0
-                md:flex-col md:space-x-0">
-                            <div class="button"></div>
-                            <div class="button"></div>
-                            <div class="button"></div>
-                            <div class="button"></div>
-                            <div class="button"></div>
-                            <div class="button"></div>
+                        <div class="science flex space-x-2 2xl:flex-col-reverse 2xl:space-x-0 xl:flex-col-reverse xl:space-x-0
+                    md:flex-col-reverse md:space-x-0" id="science">
+                            <div class="button bg-lightGrey"></div>
+                            <div class="button bg-lightGrey"></div>
+                            <div class="button bg-lightGrey"></div>
+                            <div class="button bg-lightGrey"></div>
+                            <div class="button bg-lightGrey"></div>
+                            <div class="button bg-lightGrey"></div>
                         </div>
                     </div>
 
@@ -285,14 +286,14 @@
         xl:flex-col-reverse xl:items-center xl:justify-center
         md:flex-col-reverse md:items-center md:justify-center">
                         <p class="mt-4">Sport</p>
-                        <div class="flex space-x-2 2xl:flex-col 2xl:space-x-0 xl:flex-col xl:space-x-0
-                md:flex-col md:space-x-0">
-                            <div class="button"></div>
-                            <div class="button"></div>
-                            <div class="button"></div>
-                            <div class="button"></div>
-                            <div class="button"></div>
-                            <div class="button"></div>
+                        <div class="sports flex space-x-2 2xl:flex-col-reverse 2xl:space-x-0 xl:flex-col-reverse xl:space-x-0
+                    md:flex-col-reverse md:space-x-0" id="sports">
+                            <div class="button bg-lightGrey"></div>
+                            <div class="button bg-lightGrey"></div>
+                            <div class="button bg-lightGrey"></div>
+                            <div class="button bg-lightGrey"></div>
+                            <div class="button bg-lightGrey"></div>
+                            <div class="button bg-lightGrey"></div>
                         </div>
                     </div>
                 </div>
