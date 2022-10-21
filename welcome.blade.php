@@ -32,7 +32,10 @@
 
 
             <div class="flex justify-end 2xl:pt-32 2xl:mb-241 xl:pt-30 md:pt-16">
-                <img class="w-12 absolute 2xl:w-52 xl:w-48 md:w-36" src="/images/Vector-3.svg">
+                <svg viewBox="0 0 70 280" class="w-64 absolute top-[20px]">
+                    <path id="blobright" d="" fill="#7678ED"></path>
+                </svg>
+
             </div>
         </div>
 
@@ -44,11 +47,18 @@
         <div class="answerView h-full hidden" id="answerView">
             <div class="absolute flex items-right flex-col text-center font-semibold pl-12 pt-10 text-white text-10 2xl:text-24 xl:text-20">
                 <img class="w-16 2xl:w-auto xl:w-auto md:w-20 " src="/images/Logo-3.svg">
+
                 <div>donkeyquiz</div>
             </div>
 
             <div class="flex justify-end 2xl:pt-32 xl:pt-20 md:pt-16">
-                <img class="w-12 absolute 2xl:w-52 xl:w-48 md:w-36" src="/images/Vector-8.svg">
+
+
+                <svg viewBox="0 0 70 280" class="w-64 absolute top-[20px]">
+                    <path id="blobrightwhite" d="" fill="#ffffff"></path>
+                </svg>
+
+
             </div>
 
             <div class="flex items-center flex-col text-center justify-center h-full pt-10 xl:pt-20 md:pt-20">
@@ -56,8 +66,8 @@
                     Rätt svar:
                 </p>
 
-                <h1 class="text-32 font-semibold text-lightGreen 2xl:text-48 xl:text-48 2xl:w-1/2" id="rightAnswer">
-                    </h1>
+                <h1 class="text-32 font-semibold w-62 text-lightGreen 2xl:text-48 xl:text-48 2xl:w-1/2" id="rightAnswer">
+                </h1>
 
                 <p class="text-10 pt-2 pb-2 text-white 2xl:text-14 2xl:pt-10 2xl:pb-5 xl:text-14 xl:pt-10 md:text-14 md:pt-10">
                     Svarade du rätt?</p>
@@ -78,10 +88,13 @@
 
             </div>
 
+
+
             <div class="whiteVector">
                 <div class="flex justify-start w-12">
-                    <img class="-mt-40 absolute w-12 2xl:w-auto 2xl:mt-0 2xl:top-[45%] 2xl:pb-20
-        xl:w-auto xl:mt-0 xl:top-[35%] xl:pb-20 md:w-24 md:top-[45%] md:pb-0 md:mt-0" src="/images/Vector-7.svg">
+                    <svg viewBox="120 0 70 200" class="w-48 absolute top-[200px]">
+                        <path id="blobleftwhite" d="" fill="#ffffff"></path>
+                    </svg>
                 </div>
             </div>
 
@@ -98,8 +111,8 @@
 
             <div class="flex items-center flex-col text-center justify-center h-full">
                 <p class="text-14 pt-20 pb-5 text-lightBlue 2xl:pb-0 xl:text-16" id="category">
-            </p>
-                
+                </p>
+
                 <h1 class="text-20 font-semibold text-darkBlue 2xl:text-48 2xl:w-[45%] xl:text-32 xl:w-[40%] md:text-24 md:w-[40%]" id="question">
                     <p></p>
                 </h1>
@@ -107,19 +120,19 @@
 
                 <button class="border-lightBlue border-2 rounded-full px-8 py-3.5 text-lightBlue font-semibold mt-6 mb-10 2xl:mb-48 xl:mb-28" id="getAnswerBtn">Se svaret</button>
 
-                
+
                 <div class="bg-darkBlue relative w-1/2 rounded-full h-0.5 mb-4 dark:bg-lightBlue">
                     <div class="bg-darkBlue absolute h-2.5 rounded-full dark:bg-darkBlue center-y" id="progressBar"></div>
                 </div>
 
-                
+
 
                 <p class="text-12 pt-10 text-black 2xl:text-16 xl:text-14 xl:pt-0 mb:pt-0" id="counter2">
                 </p>
 
 
 
-                
+
             </div>
         </div>
 
@@ -149,12 +162,10 @@
 
 
         <div class="vector" id="vector">
-            <div class="flex justify-start w-12">
-                <img class="-mt-40 absolute w-12 2xl:w-auto 2xl:mt-0 2xl:top-[45%] 2xl:pb-20
-        xl:w-auto xl:mt-0 xl:top-[35%] xl:pb-20 md:w-24 md:top-[55%] md:pb-20 md:mt-0" src="/images/Vector-2.svg">
-            </div>
+        <svg viewBox="120 0 70 200" class="w-48 absolute top-[200px]">
+            <path id="blobleft" d="" fill="#7678ED"></path>
+        </svg>
         </div>
-
 
 
 
@@ -169,7 +180,8 @@
                 </p>
 
                 <h1 class="text-24 font-semibold text-darkBlue 2xl:text-48 xl:text-32" id="score">
-                    <p></p></h1>
+                    <p></p>
+                </h1>
 
 
 
@@ -302,8 +314,9 @@
 
             <div class="vector" id="vector">
                 <div class="flex justify-start w-12">
-                    <img class="-mt-40 absolute w-12 2xl:w-auto 2xl:mt-0 2xl:top-[45%] 2xl:pb-20
-        xl:w-auto xl:mt-0 xl:top-[35%] xl:pb-20 md:w-24 md:top-[55%] md:pb-20 md:mt-0" src="/images/Vector-2.svg">
+                <svg viewBox="120 0 70 200" class="w-48 absolute top-[200px]">
+            <path id="blobleft" d="" fill="#7678ED"></path></svg>
+
                 </div>
             </div>
 
@@ -316,7 +329,9 @@
 
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"> </script>
-  <script type="text/javascript" src=>"http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"</script>
+    <script type="text/javascript" src=>
+        "http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+    </script>
 
 
     <script type="module" crossorigin src="http://localhost:3000/@@vite/client"></script>
