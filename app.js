@@ -139,6 +139,7 @@ const counter2 = document.getElementById('counter2')
 const progressBar = document.getElementById('progressBar')
 const progressBar2 = document.getElementById('progressBar2')
 const categories = document.getElementById('category')
+const vector2 = document.getElementById('vector')
 
 const movieScore = document.getElementById("movies").children
 const sportsScore = document.getElementById("sports").children
@@ -152,7 +153,7 @@ const musicScore = document.getElementById("music").children
 
 
 
-let currentQuestion = 0;
+
 let score = 0;
 let questionCounter = 0;
 let allQuestions;
@@ -171,8 +172,9 @@ let correctOther = [];
 let correctGeoraph = [];
 
 let allCorrectScores = [correctGeoraph, correctHistory, correctMovies,
-     correctMusic, correctOther, correctScience, correctSports]
-let allIndex = [movieScore, scienceScore, otherScore, geographScore, musicScore, historyScore, sportsScore]
+    correctMusic, correctOther, correctScience, correctSports]
+
+
 
 
 
@@ -183,7 +185,6 @@ function startGame() {
 
     axios.get('/questions').then(response => {
         allQuestions = response.data;
-
 
         score = 0
         questionCounter = 0;
@@ -218,10 +219,10 @@ function nextQuestion() {
 
     if (questionCounter >= 6) {
 
-        document.getElementById('scoreView').style.display = "block";
-        document.getElementById('questionView').style.display = "none";
-        document.getElementById('startView').style.display = "none";
-        document.getElementById('score').style.display = "block";
+        scoreView.style.display = "block";
+        questionView.style.display = "none";
+        startView.style.display = "none";
+        totalScore.style.display = "block";
         totalScore.innerText = score + " av 35 rätt";
 
     } else {
@@ -251,9 +252,9 @@ function showAnswer() {
 
     document.body.style.backgroundColor = "#7678ED";
     questionView.style.display = "none";
-    document.getElementById('whiteDonkey').style.display = 'none';
-    document.getElementById('vector').style.display = 'none';
-    document.getElementById('answerView').style.display = "block";
+    vector.style.display = 'none';
+    vector2.style.display = 'none';
+    answerView.style.display = "block";
 
     progressWidth += 2.8;
     progressWidth2 += 2.8;
@@ -322,7 +323,7 @@ function ifRightAnswer() {
 
     }
 
-    if (categories.textContent ==='Musik') {
+    if (categories.textContent === 'Musik') {
 
         musicScore[correctMusic.length].classList.remove("bg-lightGrey");
         musicScore[correctMusic.length].classList.add("bg-lightGreen");
@@ -332,14 +333,13 @@ function ifRightAnswer() {
     }
 
 
-    console.log(allCorrectScores)
 
     document.body.style.backgroundColor = "#ffffff";
-    document.getElementById('answerView').style.display = "none";
-    document.getElementById('scoreView').style.display = "none";
-    document.getElementById('vector').style.display = "block";
+    answerView.style.display = "none";
+    scoreView.style.display = "none";
+    vector2.style.display = "block";
     questionView.style.display = "block";
-    document.getElementById('whiteDonkey').style.display = "block";
+    vector.style.display = "block";
 
 
     questionCounter++
@@ -362,11 +362,11 @@ noBtn.addEventListener('click', ifWrongAnswer)
 function ifWrongAnswer() {
 
     document.body.style.backgroundColor = "#ffffff";
-    document.getElementById('answerView').style.display = "none";
-    document.getElementById('scoreView').style.display = "none";
-    document.getElementById('vector').style.display = "block";
-    document.getElementById('questionView').style.display = "none";
-    document.getElementById('whiteDonkey').style.display = "block";
+    answerView.style.display = "none";
+    scoreView.style.display = "none";
+    vector2.style.display = "block";
+    questionView.style.display = "none";
+    vector.style.display = "block";
 
 
     questionCounter++
@@ -389,19 +389,35 @@ oneMoreTimeBtn.addEventListener('click', oneMoreRound)
 function oneMoreRound() {
 
 
-    for (var i = 0; i<allCorrectScores.length; i++) {
+    for (var i = 0; i < allCorrectScores.length; i++) {
         allCorrectScores[i].splice(0);
-     }
+    }
 
-     for (var i = 0; i < movieScore.length; i++) {
-        movieScore[i].style.backgroundColor = "#EEEEEE";
-        sportsScore[i].style.backgroundColor = "#EEEEEE";
-        scienceScore[i].style.backgroundColor = "#EEEEEE";
-        historyScore[i].style.backgroundColor = "#EEEEEE";
-        sportsScore[i].style.backgroundColor = "#EEEEEE";
-        otherScore[i].style.backgroundColor = "#EEEEEE";
-        geographScore[i].style.backgroundColor = "#EEEEEE"; 
-        musicScore[i].style.backgroundColor = "#EEEEEE"; 
+
+
+    for (var i = 0; i <= 5; i++) {
+
+        movieScore[i].classList.remove("bg-lightGreen");
+        movieScore[i].classList.add("bg-lightGrey");
+
+        otherScore[i].classList.remove("bg-lightGreen");
+        otherScore[i].classList.add("bg-lightGrey");
+
+
+        musicScore[i].classList.remove("bg-lightGreen");
+        musicScore[i].classList.add("bg-lightGrey");
+
+        geographScore[i].classList.remove("bg-lightGreen");
+        geographScore[i].classList.add("bg-lightGrey");
+
+        sportsScore[i].classList.remove("bg-lightGreen");
+        sportsScore[i].classList.add("bg-lightGrey");
+
+        scienceScore[i].classList.remove("bg-lightGreen");
+        scienceScore[i].classList.add("bg-lightGrey");
+    
+        historyScore[i].classList.remove("bg-lightGreen");
+        historyScore[i].classList.add("bg-lightGrey");
     }
 
 
@@ -410,16 +426,12 @@ function oneMoreRound() {
     questionCounter = 0;
     score = 0;
 
-    document.getElementById('startView').style.display = "block";
-    document.getElementById('answerView').style.display = "none";
-    document.getElementById('scoreView').style.display = "none";
-    document.getElementById('vector').style.display = "block";
-    document.getElementById('questionView').style.display = "none";
-    document.getElementById('whiteDonkey').style.display = "block";
-    document.getElementById('scoreView').style.display = "none";
-
-
-
+    answerView.style.display = "none";
+    questionView.style.display = "none";
+    scoreView.style.display = "none";
+    startView.style.display = "block";
+    vector2.style.display = "block";
+    vector.style.display = "block";
 
 
 }
