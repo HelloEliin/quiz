@@ -176,15 +176,20 @@ let allCorrectScores = [correctGeoraph, correctHistory, correctMovies,
 
 
 
-
-
-
 startButton.addEventListener('click', startGame)
+
+
+
 
 function startGame() {
 
+    startView.classList.remove('scale-100')
+    startView.classList.add('scale-0')
+
+
     axios.get('/questions').then(response => {
         allQuestions = response.data;
+
 
         score = 0
         questionCounter = 0;
@@ -205,6 +210,14 @@ function startGame() {
 
         questionCounter++
 
+        setTimeout(() => {
+
+            questionView.classList.remove('scale-0')
+            questionView.classList.add('scale-100')
+
+        }, 300);
+
+
         nextQuestion();
 
     })
@@ -212,7 +225,6 @@ function startGame() {
 
 
 function nextQuestion() {
-
 
 
     $('#progressBar').width(progressWidth + '%');
@@ -247,6 +259,21 @@ function nextQuestion() {
 getAnswerBtn.addEventListener('click', showAnswer)
 
 function showAnswer() {
+
+
+    setTimeout(() => {
+
+        questionView.classList.remove('scale-100')
+        questionView.classList.add('scale-0')
+
+    }, 250);
+
+    setTimeout(() => {
+
+        answerView.classList.remove('scale-0')
+        answerView.classList.add('scale-100')
+
+    }, 250);
 
     $('#progressBar2').width(progressWidth2 + '%');
 
@@ -333,6 +360,21 @@ function ifRightAnswer() {
     }
 
 
+    setTimeout(() => {
+
+        answerView.classList.remove('scale-100')
+        answerView.classList.add('scale-0')
+
+    }, 250);
+
+    setTimeout(() => {
+
+        questionView.classList.remove('scale-0')
+        questionView.classList.add('scale-100')
+
+    }, 250);
+
+
 
     document.body.style.backgroundColor = "#ffffff";
     answerView.style.display = "none";
@@ -370,6 +412,23 @@ function ifWrongAnswer() {
 
 
     questionCounter++
+
+
+
+    setTimeout(() => {
+
+        answerView.classList.remove('scale-100')
+        answerView.classList.add('scale-0')
+
+    }, 250);
+
+    setTimeout(() => {
+
+        questionView.classList.remove('scale-0')
+        questionView.classList.add('scale-100')
+
+    }, 250);
+
 
 
 
@@ -415,13 +474,26 @@ function oneMoreRound() {
 
         scienceScore[i].classList.remove("bg-lightGreen");
         scienceScore[i].classList.add("bg-lightGrey");
-    
+
         historyScore[i].classList.remove("bg-lightGreen");
         historyScore[i].classList.add("bg-lightGrey");
     }
 
 
 
+    setTimeout(() => {
+
+        answerView.classList.remove('scale-100')
+        answerView.classList.add('scale-0')
+
+    }, 250);
+
+    setTimeout(() => {
+
+        startView.classList.remove('scale-0')
+        startView.classList.add('scale-100')
+
+    }, 250);
 
     questionCounter = 0;
     score = 0;
