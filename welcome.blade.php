@@ -32,7 +32,7 @@
 
 
             <div class="flex justify-end 2xl:pt-32 2xl:mb-241 xl:pt-30 md:pt-16">
-                <svg viewBox="0 0 70 280" class="w-64 absolute top-[20px]">
+                <svg viewBox="0 0 70 280" class="w-16 md:w-48 xl:w-64 2xl:w-64 absolute">
                     <path id="blobright" d="" fill="#7678ED"></path>
                 </svg>
 
@@ -44,7 +44,7 @@
 
 
 
-        <div class="answerView h-full hidden" id="answerView">
+        <div class="answerView h-full hidden transition-scale duration-300 scale-0 ease-in" id="answerView">
             <div class="absolute flex items-right flex-col text-center font-semibold pl-12 pt-10 text-white text-10 2xl:text-24 xl:text-20">
                 <img class="w-16 2xl:w-auto xl:w-auto md:w-20 " src="/images/Logo-3.svg">
 
@@ -54,7 +54,7 @@
             <div class="flex justify-end 2xl:pt-32 xl:pt-20 md:pt-16">
 
 
-                <svg viewBox="0 0 70 280" class="w-64 absolute top-[20px]">
+                <svg viewBox="0 0 70 280" class="absolute top-[20px] w-16 md:w-48 xl:w-64 2xl:w-64 ">
                     <path id="blobrightwhite" d="" fill="#ffffff"></path>
                 </svg>
 
@@ -92,7 +92,7 @@
 
             <div class="whiteVector">
                 <div class="flex justify-start w-12">
-                    <svg viewBox="120 0 70 200" class="w-48 absolute top-[200px]">
+                    <svg viewBox="120 0 70 200" class="w-16 md:w-32 2xl:w-48 xl:w-48 absolute top-[550px]  md:top-[200px] xl:top-[200px] 2xl:top-[200px]">
                         <path id="blobleftwhite" d="" fill="#ffffff"></path>
                     </svg>
                 </div>
@@ -107,7 +107,7 @@
 
 
 
-        <div class="questionView h-full hidden" id="questionView">
+        <div class="questionView h-full hidden transition-scale duration-300 scale-0" id="questionView">
 
             <div class="flex items-center flex-col text-center justify-center h-full">
                 <p class="text-14 pt-20 pb-5 text-lightBlue 2xl:pb-0 xl:text-16" id="category">
@@ -142,7 +142,7 @@
 
 
 
-        <div class="startView h-full 2xl:pb-20" id="startView">
+        <div class="startView h-full transition-scale duration-300 scale-100 2xl:pb-20" id="startView">
             <div class="flex items-center flex-col text-center justify-center h-full -mt-20">
                 <h1 class="text-24 font-semibold text-darkBlue 2xl:text-48 xl:text-32">
                     Svensk mästare i TP?</h1>
@@ -161,8 +161,8 @@
 
 
 
-        <div class="vector" id="vector">
-        <svg viewBox="120 0 70 200" class="w-48 absolute top-[200px]">
+        <div class="vector" id="vector">    
+        <svg viewBox="120 0 70 200" class="w-16 top-[550px] md:w-32 md:top-[200px] xl:w-48  2xl:w-48 absolute xl:top-[200px] 2xl:top-[200px]">
             <path id="blobleft" d="" fill="#7678ED"></path>
         </svg>
         </div>
@@ -313,8 +313,8 @@
             </div>
 
             <div class="vector" id="vector">
-                <div class="flex justify-start w-12">
-                <svg viewBox="120 0 70 200" class="w-48 absolute top-[200px]">
+                <div class="flex justify-start">
+                <svg viewBox="120 0 70 200" class="absolute md:w-48 xl:w-64 2xl:w-64 ">
             <path id="blobleft" d="" fill="#7678ED"></path></svg>
 
                 </div>
