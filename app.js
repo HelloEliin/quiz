@@ -105,17 +105,6 @@ function noise(x, y) {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 import axios from 'axios';
 window.axios = axios;
 
@@ -151,15 +140,13 @@ const musicScore = document.getElementById("music").children
 
 
 
-
-
-
 let score = 0;
 let questionCounter = 0;
 let allQuestions;
 let category;
 let progressWidth = 0;
 let progressWidth2 = 0;
+let maxQuestions = 35;
 
 
 
@@ -179,8 +166,6 @@ let allCorrectScores = [correctGeoraph, correctHistory, correctMovies,
 startButton.addEventListener('click', startGame)
 
 
-
-
 function startGame() {
 
     startView.classList.remove('scale-100')
@@ -189,6 +174,8 @@ function startGame() {
 
     axios.get('/questions').then(response => {
         allQuestions = response.data;
+        
+        console.log(allQuestions)
 
 
         score = 0
@@ -215,7 +202,7 @@ function startGame() {
             questionView.classList.remove('scale-0')
             questionView.classList.add('scale-100')
 
-        }, 300);
+        }, 250);
 
 
         nextQuestion();
@@ -229,7 +216,7 @@ function nextQuestion() {
 
     $('#progressBar').width(progressWidth + '%');
 
-    if (questionCounter >= 6) {
+    if (questionCounter > 35 ) {
 
         scoreView.style.display = "block";
         questionView.style.display = "none";
@@ -239,9 +226,9 @@ function nextQuestion() {
 
     } else {
 
-        question.innerText = allQuestions[questionCounter]['question']
-        categories.innerText = allQuestions[questionCounter]['category']
-        rightAnswer.innerText = allQuestions[questionCounter]['answer']
+        question.innerText = allQuestions[questionCounter-1]['question']
+        categories.innerText = allQuestions[questionCounter-1]['category']
+        rightAnswer.innerText = allQuestions[questionCounter-1]['answer']
         questionView.style.display = "block";
         startView.style.display = "none";
         scoreView.style.display = "none";
@@ -383,7 +370,6 @@ function ifRightAnswer() {
     questionView.style.display = "block";
     vector.style.display = "block";
 
-
     questionCounter++
     score++
 
@@ -447,11 +433,9 @@ oneMoreTimeBtn.addEventListener('click', oneMoreRound)
 
 function oneMoreRound() {
 
-
     for (var i = 0; i < allCorrectScores.length; i++) {
         allCorrectScores[i].splice(0);
     }
-
 
 
     for (var i = 0; i <= 5; i++) {
