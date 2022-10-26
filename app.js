@@ -269,9 +269,11 @@ function showAnswer() {
     vector.style.display = 'none';
     vector2.style.display = 'none';
     answerView.style.display = "block";
-
-    progressWidth += 2.8;
-    progressWidth2 += 2.8;
+    
+    
+    
+    progressWidth = (questionCounter / allQuestions.length) * 100;
+    progressWidth2 = (questionCounter / allQuestions.length) * 100;
 
 }
 
@@ -438,7 +440,7 @@ function oneMoreRound() {
     }
 
 
-    for (var i = 0; i <= 5; i++) {
+    for (var i = 0; i <= 4; i++) {
 
         movieScore[i].classList.remove("bg-lightGreen");
         movieScore[i].classList.add("bg-lightGrey");
