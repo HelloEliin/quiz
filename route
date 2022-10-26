@@ -51,35 +51,41 @@ Route::get('questions', function () {
         elseif (count($countCategories["Film & TV"]) >= 5 && $category === "Film & TV") {
             continue;
         }
+
         if (count($countCategories["Musik"]) < 5 && $category === "Musik") {
             array_push($countCategories["Musik"], 1);
         } 
         elseif (count($countCategories["Musik"]) >= 5 && $category === "Musik") {
             continue;
         }
+
         if (count($countCategories["Historia"]) < 5 && $category === "Historia") {
             array_push($countCategories["Historia"], 1);
         } 
         elseif (count($countCategories["Historia"]) >= 5 && $category === "Historia") {
             continue;
         }
+
         if (count($countCategories["Övrigt"]) < 5 && $category === "Övrigt") {
             array_push($countCategories["Övrigt"], 1);
         } 
         elseif (count($countCategories["Övrigt"]) >= 5 && $category === "Övrigt") {
             continue;
         }
+
         if (count($countCategories["Vetenskap"]) < 5 && $category === "Vetenskap") {
             array_push($countCategories["Vetenskap"], 1);
         } 
-        elseif (count($countCategories["Vetenskap"]) >= 5 && $category === "Veteskap") {
+        elseif (count($countCategories["Vetenskap"]) >= 5 && $category === "Vetenskap") {
             continue;
         }
+
         if (count($countCategories["Sport"]) < 5 && $category === "Sport") {
             array_push($countCategories["Sport"], 1);
         } elseif (count($countCategories["Sport"]) >= 5 && $category === "Sport") {
             continue;
         }
+
         if (count($countCategories["Geografi"]) < 5 && $category === "Geografi") {
             array_push($countCategories["Geografi"], 1);
         }elseif (count($countCategories["Geografi"]) >= 5 && $category === "Geografi") {
@@ -97,4 +103,3 @@ Route::get('questions', function () {
     return response()->json($questions);
     
 });
-
