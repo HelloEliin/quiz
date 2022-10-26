@@ -66,7 +66,7 @@
                     Rätt svar:
                 </p>
 
-                <h1 class="text-32 font-semibold w-62 text-lightGreen 2xl:text-48 xl:text-48 2xl:w-1/2" id="rightAnswer">
+                <h1 class="text-32 font-semibold w-62 text-lightGreen md:w-1/2 xl:w-1/2 2xl:text-48 xl:text-48 2xl:w-1/2" id="rightAnswer">
                 </h1>
 
                 <p class="text-10 pt-2 pb-2 text-white 2xl:text-14 2xl:pt-10 2xl:pb-5 xl:text-14 xl:pt-10 md:text-14 md:pt-10">
@@ -202,7 +202,6 @@
                             <div class="button bg-lightGrey"></div>
                             <div class="button bg-lightGrey"></div>
                             <div class="button bg-lightGrey"></div>
-                            <div class="button bg-lightGrey"></div>
                         </div>
                     </div>
 
@@ -221,7 +220,6 @@
                             <div class="button bg-lightGrey"></div>
                             <div class="button bg-lightGrey"></div>
                             <div class="button bg-lightGrey"></div>
-                            <div class="button bg-lightGrey"></div>
                         </div>
                     </div>
 
@@ -233,7 +231,6 @@
                         <p class="mt-4">Historia</p>
                         <div class="history flex space-x-2 2xl:flex-col-reverse 2xl:space-x-0 xl:flex-col-reverse xl:space-x-0
                     md:flex-col-reverse md:space-x-0" id="history">
-                            <div class="button bg-lightGrey"></div>
                             <div class="button bg-lightGrey"></div>
                             <div class="button bg-lightGrey"></div>
                             <div class="button bg-lightGrey"></div>
@@ -257,7 +254,6 @@
                             <div class="button bg-lightGrey"></div>
                             <div class="button bg-lightGrey"></div>
                             <div class="button bg-lightGrey"></div>
-                            <div class="button bg-lightGrey"></div>
                         </div>
                     </div>
 
@@ -269,7 +265,6 @@
                         <p class="mt-4">Övrigt</p>
                         <div class="other flex space-x-2 2xl:flex-col-reverse 2xl:space-x-0 xl:flex-col-reverse xl:space-x-0
                     md:flex-col-reverse md:space-x-0" id="other">
-                            <div class="button bg-lightGrey"></div>
                             <div class="button bg-lightGrey"></div>
                             <div class="button bg-lightGrey"></div>
                             <div class="button bg-lightGrey"></div>
@@ -290,7 +285,6 @@
                             <div class="button bg-lightGrey"></div>
                             <div class="button bg-lightGrey"></div>
                             <div class="button bg-lightGrey"></div>
-                            <div class="button bg-lightGrey"></div>
                         </div>
                     </div>
 
@@ -300,7 +294,6 @@
                         <p class="mt-4">Sport</p>
                         <div class="sports flex space-x-2 2xl:flex-col-reverse 2xl:space-x-0 xl:flex-col-reverse xl:space-x-0
                     md:flex-col-reverse md:space-x-0" id="sports">
-                            <div class="button bg-lightGrey"></div>
                             <div class="button bg-lightGrey"></div>
                             <div class="button bg-lightGrey"></div>
                             <div class="button bg-lightGrey"></div>
